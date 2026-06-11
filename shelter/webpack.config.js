@@ -62,6 +62,6 @@ module.exports = (env, argv) => {
         filename: "css/[name].[contenthash:8].css",
       }),
     ],
-    devTool: isProduction ? false : "source-map",
+    devtool: isProduction ? false : "source-map",
   };
 };
