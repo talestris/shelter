@@ -1,7 +1,7 @@
-@use '../../scss/global';
-@use '../../scss/variables';
-@use '../../scss/components';
-@use '../../scss/mixins';
+@use '../../scss/global' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/components' as *;
+@use '../../scss/mixins' as *;
 
 .not-only {
     position: relative;
