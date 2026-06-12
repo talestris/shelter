@@ -1,8 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { env, argv } = require("process");
-const { type } = require("os");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
@@ -28,6 +26,13 @@ module.exports = (env, argv) => {
 
     module: {
       rules: [
+        {
+          test: /\.css$/i,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+            "css-loader",
+          ],
+        },
         {
           test: /\.s[ac]ss$/i,
           use: [

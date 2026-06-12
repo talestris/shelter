@@ -1,4 +1,13 @@
-@use 'global';
-@use 'variables';
-@use 'components';
-@use 'mixins';
+@use '../../scss/global';
+@use '../../scss/variables';
+@use '../../scss/components';
+@use '../../scss/mixins';
+
+.not-only {
+    position: relative;
+    background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;
+}
