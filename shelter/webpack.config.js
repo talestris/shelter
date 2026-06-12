@@ -27,6 +27,10 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
+          test: /\.html$/i,
+          loader: "html-loader",
+        },
+        {
           test: /\.css$/i,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : "style-loader",
@@ -42,10 +46,17 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif|webp|woff|woff2)$/i,
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
           type: "asset/resource",
           generator: {
-            filename: "assets/[name][ext]",
+            filename: "assets/images/[name][ext]",
+          },
+        },
+        {
+          test: /\.(woff|woff2)$/i,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/fonts/[name][ext]",
           },
         },
       ],
