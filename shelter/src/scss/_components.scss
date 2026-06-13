@@ -2,12 +2,6 @@
 @use '../scss/global' as *;
 @use '../scss/mixins' as *;
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
 .header {
     position: absolute;
     top: 30px;
@@ -76,10 +70,10 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 270px;
-    border-radius: 9px 9px 0 0;
-    padding: 30px 35px;
+    border-radius: 9px;
     justify-content: space-between;
     gap: 30px;
+    background-color: $color-light;
 
     &__img {
         width: 270px;
