@@ -78,18 +78,40 @@
     gap: 60px;
 }
 
+.our-friends__title {
+    @include text-style($font-main, 35px, $lh: 130%);
+    color: $color-dark-1;
+    text-align: center;
+}
+
 .slider__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .arrow-left,
+    .arrow-right {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 52px;
+        height: 52px;
+        border: 2px solid $color-primary;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+    }
 }
 
 .slider__window {
+    width: 980px;
+    overflow: hidden;
+}
+
+.slider__row {
     display: flex;
 
-    &__row {
-        display: flex;
-    }
+    gap: 90px;
 }
 
 .help__container {
