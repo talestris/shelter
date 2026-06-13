@@ -21,6 +21,8 @@
         flex-direction: column;
         max-width: 460px;
         width: 100%;
+        justify-content: flex-start;
+        gap: 42px;
     }
 }
 
@@ -29,7 +31,43 @@
     color: $color-white;
 }
 
+.not-only__image {
+    align-self: flex-end;
+}
+
 .puppy {
-    width: 698px;
-    height: 728px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.about {
+    padding: 80px 40px;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+        gap: 120px;
+        padding: 0 175px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    &__title {
+        @include text-style($font-main, 35px, $lh: 130%);
+        color: $color-dark-1;
+    }
+
+    &__subtitle {
+        @include text-style($font-second, 15px, $lh: 160%);
+        color: $color-dark-2;
+    }
 }

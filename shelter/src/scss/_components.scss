@@ -10,7 +10,7 @@
 
 .header {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     width: 100%;
     z-index: 1;
@@ -51,4 +51,18 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 35px;
+
+    &__link {
+        @include text-style($font-second, 15px, $lh: 160%);
+        color: $color-grey;
+    }
+}
+
+.button {
+    border-radius: 100px;
+    padding: 15px 45px;
+    width: 207px;
+    height: 52px;
+    background-color: $color-primary;
 }
