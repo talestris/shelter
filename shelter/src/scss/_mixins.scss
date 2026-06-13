@@ -1,0 +1,10 @@
+@use '../scss/variables' as *;
+
+
+@mixin text-style($font, $size, $weight: 400, $lh: 110%, $ls: 0.06em) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lh;
+    letter-spacing: $ls;
+}

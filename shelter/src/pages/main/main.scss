@@ -13,5 +13,23 @@
 
     &__container {
         display: flex;
+        align-items: center;
     }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        max-width: 460px;
+        width: 100%;
+    }
+}
+
+.not-only__title {
+    @include text-style($font-main, 44px, $lh: 130%);
+    color: $color-white;
+}
+
+.puppy {
+    width: 698px;
+    height: 728px;
 }
