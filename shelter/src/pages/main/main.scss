@@ -24,15 +24,15 @@
         justify-content: flex-start;
         gap: 42px;
     }
-}
 
-.not-only__title {
-    @include text-style($font-main, 44px, $lh: 130%);
-    color: $color-white;
-}
+    &__title {
+        @include text-style($font-main, 44px, $lh: 130%);
+        color: $color-white;
+    }
 
-.not-only__image {
-    align-self: flex-end;
+    &__image {
+        align-self: flex-end;
+    }
 }
 
 .puppy {
@@ -42,8 +42,6 @@
 }
 
 .about {
-    padding: 80px 40px;
-
     &__container {
         display: flex;
         justify-content: space-around;
@@ -70,4 +68,36 @@
         @include text-style($font-second, 15px, $lh: 160%);
         color: $color-dark-2;
     }
+}
+
+.our-friends__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.slider__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__window {
+    display: flex;
+
+    &__row {
+        display: flex;
+    }
+}
+
+.help__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.help__list {
+    display: flex;
+    flex-wrap: wrap;
 }

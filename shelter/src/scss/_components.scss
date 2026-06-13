@@ -65,4 +65,24 @@ h1 {
     width: 207px;
     height: 52px;
     background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    border-radius: 9px 9px 0 0;
+    padding: 30px 35px;
+    justify-content: space-between;
+    gap: 30px;
+
+    &__img {
+        width: 270px;
+        height: 270px;
+    }
 }
