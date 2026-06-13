@@ -170,3 +170,31 @@
     text-align: center;
     color: $color-dark-1;
 }
+
+.in-addition {
+    background-color: $color-grey-1;
+    padding-left: 0;
+    padding-right: 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 915px;
+        width: 100%;
+        gap: 30px;
+        padding: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    &__title {
+        @include text-style($font-main, 35px, $lh: 130%);
+        color: $color-dark-1;
+    }
+}
