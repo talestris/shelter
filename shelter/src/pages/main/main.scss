@@ -14,6 +14,7 @@
     &__container {
         display: flex;
         align-items: center;
+        gap: 2.6em;
     }
 
     &__content {
@@ -22,16 +23,18 @@
         max-width: 460px;
         width: 100%;
         justify-content: flex-start;
-        gap: 42px;
+        gap: 40px;
+        position: relative;
+        bottom: 2.4em;
     }
 
     &__title {
-        @include text-style($font-main, 44px, $lh: 130%);
+        @include text-style($font-main, 44px, $lh: 130%, $ls: 0.001em);
         color: $color-white;
     }
 
     &__subtitle {
-        @include text-style($font-second, 15px, $lh: 160%);
+        @include text-style($font-second, 15px, $lh: 160%, $ls: 0);
         color: $color-grey;
     }
 
@@ -47,6 +50,8 @@
 }
 
 .about {
+    padding-bottom: 6em;
+
     &__container {
         display: flex;
         justify-content: space-around;
@@ -61,17 +66,30 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 25px;
+        gap: 20px;
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 130%);
+        @include text-style($font-main, 35px, $lh: 129%);
         color: $color-dark-1;
+        position: relative;
+        bottom: 0.14em;
     }
 
     &__subtitle {
-        @include text-style($font-second, 15px, $lh: 160%);
+        @include text-style($font-second, 0.938rem, $lh: 165%, $ls: 0.001em);
         color: $color-dark-2;
+    }
+
+    &__paragraph1 {
+        position: relative;
+        right: 0.5em;
+        bottom: 0.14em;
+    }
+
+    &__paragraph2 {
+        position: relative;
+        line-height: 160%;
     }
 }
 
@@ -79,6 +97,7 @@
     padding-left: 0;
     padding-right: 0;
     background-color: $color-grey-1;
+    padding-top: 0;
 }
 
 .our-friends__container {
@@ -86,15 +105,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 44px;
     padding-left: 0;
     padding-right: 0;
+    padding-top: 6em;
+    padding-bottom: 57px;
 }
 
 .our-friends__title {
     @include text-style($font-main, 35px, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
+    position: relative;
+    bottom: 0.45em;
+}
+
+.our-friends__button {
+    align-self: center;
+    position: relative;
+    top: 2.3em;
 }
 
 .slider__container {
@@ -103,6 +132,11 @@
     align-items: center;
     max-width: 1200px;
     width: 100%;
+
+    .arrow {
+        position: relative;
+        top: 0.8em;
+    }
 
     .arrow-left,
     .arrow-right {
@@ -126,7 +160,16 @@
 .slider__row {
     display: flex;
     justify-content: space-around;
-    gap: 90px;
+    gap: 87px;
+}
+
+.card__1 {
+    position: relative;
+    right: 0.3em;
+}
+
+.help {
+    padding: 0 0 1.15em 0;
 }
 
 .help__container {
@@ -135,6 +178,7 @@
     align-items: center;
     justify-content: center;
     gap: 60px;
+    padding: 80px 40px;
 }
 
 .help__title {
@@ -149,8 +193,8 @@
     max-width: 1026px;
     width: 100%;
     justify-content: center;
-    row-gap: 55px;
-    gap: 100px;
+    gap: 119px;
+    row-gap: 3.5em;
 }
 
 .help__item {
@@ -158,6 +202,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.8em;
 }
 
 .help-item__img {
@@ -175,6 +220,7 @@
     background-color: $color-grey-1;
     padding-left: 0;
     padding-right: 0;
+    padding-top: 4.3em;
 
     &__container {
         display: flex;

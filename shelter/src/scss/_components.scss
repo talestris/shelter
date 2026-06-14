@@ -29,14 +29,14 @@
     gap: 10px;
 
     &__subtitle {
-        @include text-style($font-second, 13px);
+        @include text-style($font-second, 13px, $ls: 0.1em);
         color: $color-white;
         padding-left: 4px;
     }
 }
 
 h1 {
-    @include text-style($font-main, 32px, $ls: 0.01em);
+    @include text-style($font-main, 32px);
     margin: 0;
     color: $color-primary;
 }
@@ -45,24 +45,33 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 35px;
+    gap: 32px;
 
     &__link {
-        @include text-style($font-second, 15px, $lh: 160%);
+        @include text-style($font-second, 15px, $lh: 152%, $ls: 0.001em);
         color: $color-grey;
     }
 }
 
+.link {
+    letter-spacing: 0.018em;
+}
+
 .button {
+    @include text-style($font-main, 17px, $lh: 130%);
+    color: $color-black;
+    border: 2px solid $color-primary;
     border-radius: 100px;
-    padding: 15px 45px;
-    width: 207px;
-    height: 52px;
     background-color: $color-primary;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
+    padding: 15px 45px;
+    align-self: flex-start;
+
+    &__second {
+        background-color: transparent;
+    }
 }
 
 .card {
@@ -79,6 +88,18 @@ h1 {
         width: 270px;
         height: 270px;
     }
+
+    &__title {
+        @include text-style($font-main, 20px);
+        text-align: center;
+        color: $color-dark-1;
+    }
+
+    &__button {
+        align-self: center;
+        position: relative;
+        bottom: 0.15em;
+    }
 }
 
 .footer {
@@ -88,13 +109,13 @@ h1 {
     &__content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 40px;
     }
 
@@ -106,5 +127,11 @@ h1 {
     &__subtitle {
         @include text-style($font-main, 20px, $lh: 115%);
         color: $color-primary;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
     }
 }
