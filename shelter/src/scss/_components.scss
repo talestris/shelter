@@ -98,7 +98,7 @@ h1 {
     &__button {
         align-self: center;
         position: relative;
-        bottom: 0.15em;
+        bottom: 0.1em;
     }
 }
 
@@ -116,7 +116,13 @@ h1 {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 40px;
+        gap: 32px;
+        padding-top: 1.04em;
+    }
+
+    &__locations {
+        position: relative;
+        right: 0.3em;
     }
 
     &__title {
@@ -134,4 +140,19 @@ h1 {
         align-items: center;
         gap: 20px;
     }
+
+    &__puppy {
+        position: relative;
+        right: 0.1em;
+    }
+}
+
+.contacts__mail {
+    position: relative;
+    top: 0.6em;
+}
+
+.contacts__phone {
+    position: relative;
+    top: 1.2em;
 }

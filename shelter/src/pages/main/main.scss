@@ -221,6 +221,7 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 4.3em;
+    padding-bottom: 6.15em;
 
     &__container {
         display: flex;
@@ -242,16 +243,25 @@
     &__title {
         @include text-style($font-main, 35px, $lh: 130%);
         color: $color-dark-1;
+        position: relative;
+        top: 0.4em;
     }
 
     &__subtitle {
         @include text-style($font-main, 15px);
         color: $color-dark-1;
+        position: relative;
+        top: 0.5em;
     }
 
     &__txt {
-        @include text-style($font-second, 12px, $lh: 150%, $style: italic);
+        @include text-style($font-second, 12px, $lh: 150%, $ls: 0, $style: italic);
         color: $color-dark-3;
+    }
+
+    &__image {
+        position: relative;
+        top: 0.5em;
     }
 }
 
@@ -261,6 +271,8 @@
     width: 349px;
     height: 43px;
     background-color: $color-primary;
+    position: relative;
+    top: 0.15em;
 
     &__content {
         display: flex;
