@@ -197,4 +197,33 @@
         @include text-style($font-main, 35px, $lh: 130%);
         color: $color-dark-1;
     }
+
+    &__subtitle {
+        @include text-style($font-main, 15px);
+        color: $color-dark-1;
+    }
+
+    &__txt {
+        @include text-style($font-second, 12px, $lh: 150%, $style: italic);
+        color: $color-dark-3;
+    }
+}
+
+.credit-card {
+    border-radius: 9px;
+    padding: 10px 15px;
+    width: 349px;
+    height: 43px;
+    background-color: $color-primary;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__number {
+        @include text-style($font-main, 20px, $lh: 115%);
+        color: $color-dark-1;
+    }
 }

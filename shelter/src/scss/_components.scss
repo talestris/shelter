@@ -80,3 +80,31 @@ h1 {
         height: 270px;
     }
 }
+
+.footer {
+    background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    padding: 40px 40px 0 40px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    &__title {
+        @include text-style($font-main, 35px, $lh: 130%);
+        color: $color-white;
+    }
+
+    &__subtitle {
+        @include text-style($font-main, 20px, $lh: 115%);
+        color: $color-primary;
+    }
+}
