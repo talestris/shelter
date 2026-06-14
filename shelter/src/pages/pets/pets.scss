@@ -1,4 +1,35 @@
-@use '../../scss/global';
-@use '../../scss/variables';
-@use '../../scss/components';
-@use '../../scss/mixins';
+@use '../../scss/global' as *;
+@use '../../scss/variables' as *;
+@use '../../scss/components' as *;
+@use '../../scss/mixins' as *;
+
+.pets-header {
+    position: relative;
+}
+
+.pets__logo-title {
+    color: $color-dark-1;
+}
+
+.pets__logo-subtitle {
+    color: $color-black;
+}
+
+.pets {
+    background-color: $color-grey-1;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__link {
+        color: $color-dark-1;
+    }
+}

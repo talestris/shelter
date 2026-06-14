@@ -11,16 +11,16 @@
 <body>
     <header class="header">
         <div class="container header__container">
-            <div class="logo">
+            <a href="#" class="logo">
                 <h1 class="logo__title">Cozy House</h1>
                 <span class="logo__subtitle">Shelter for pets in Boston</span>
-            </div>
+            </a>
             <nav class="nav">
                 <ul class="menu">
                     <li class="menu__link"><a href="" class="link">About the shelter</a></li>
-                    <li class="menu__link"><a href="" class="link">Our pets</a></li>
-                    <li class="menu__link"><a href="" class="link">Help the shelter</a></li>
-                    <li class="menu__link"><a href="" class="link">Contacts</a></li>
+                    <li class="menu__link"><a href="pets.html" class="link">Our pets</a></li>
+                    <li class="menu__link"><a href="#help" class="link">Help the shelter</a></li>
+                    <li class="menu__link"><a href="#contacts" class="link">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,7 +34,7 @@
                         puppy with an extremely
                         wide and open heart. He or she will love you more than anybody else in the world, you will see!
                     </p>
-                    <button class="button button__first" type="button">Make a friend</button>
+                    <a href="#pets" class="button button__first">Make a friend</a>
                 </div>
                 <div class="not-only__image">
                     <img src="../../assets/images/start-screen-puppy.png" alt="start-screen-puppy" class="puppy">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </section>
-        <section class="section our-friends">
+        <section class="section our-friends" id="pets">
             <div class="container our-friends__container">
                 <h2 class="our-friends__title">Our friends who<br>are looking for a house</h2>
                 <div class="slider__container">
@@ -91,10 +91,10 @@
                         <img src="../../assets/svg/arrow-right.svg" alt="" class="arrow-icon">
                     </button>
                 </div>
-                <button class="button our-friends__button" type="button">Get to know the rest</button>
+                <a href="pets.html" class="button our-friends__button">Get to know the rest</a>
             </div>
         </section>
-        <section class="section help">
+        <section class="section help" id="help">
             <div class="container help__container">
                 <h2 class="section__title help__title">How you can help<br>our shelter</h2>
                 <ul class="help__list">
@@ -147,10 +147,10 @@
                     <h2 class="section__title in-addition__title">You can also<br>make a donation</h2>
                     <p class="section__subtitle in-addition__subtitle">Name of the bank / Type of bank account</p>
                     <div class="credit-card">
-                        <div class="credit-card__content">
+                        <a href="#" class="credit-card__content">
                             <img src="../../assets/svg/credit-card.svg" alt="credit-card-icon" class="credit-card__img">
                             <span class="credit-card__number">8380 2880 8028 8791 7435</span>
-                        </div>
+                        </a>
                     </div>
                     <span class="in-addition__txt">Legal information and lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices
@@ -161,17 +161,17 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="container footer__container">
+        <div class="container footer__container" id="contacts">
             <div class="footer__content">
                 <div class="footer__item footer__contacts">
                     <h2 class="section__title footer__title">For questions<br>and suggestions</h2>
-                    <a class="footer__link contacts__mail">
+                    <a href="mailto:email@shelter.com" class="footer__link contacts__mail">
                         <img src="../../assets/svg/icon-mail.svg" alt="icon-mail" class="mail__icon">
                         <span class="footer__subtitle mail__txt">email@shelter.com</span>
                     </a>
-                    <a class="footer__link contacts__phone">
+                    <a href="tel:+136745677554" class="footer__link contacts__phone">
                         <img src="../../assets/svg/icon-phone.svg" alt="icon-phone" class="phone__icon">
-                        <span class="footer__subtitle phone__number">+13 674 567 75 54</span>
+                        <span class="footer__subtitle phone__number">+13&nbsp;674&nbsp;567&nbsp;75&nbsp;54</span>
                     </a>
                 </div>
                 <div class="footer__item footer__locations">

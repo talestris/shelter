@@ -27,6 +27,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 
     &__subtitle {
         @include text-style($font-second, 13px, $ls: 0.1em);
@@ -155,4 +156,8 @@ h1 {
 .contacts__phone {
     position: relative;
     top: 1.2em;
+}
+
+.phone__number {
+    white-space: nowrap;
 }
