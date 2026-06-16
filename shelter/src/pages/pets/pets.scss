@@ -49,6 +49,10 @@
     &__link {
         color: $color-dark-1;
     }
+
+    &__link:hover {
+        color: $color-black;
+    }
 }
 
 .pagination {
