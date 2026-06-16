@@ -14,13 +14,14 @@
     background-color: $color-grey-1;
     position: relative;
     padding-top: 150px;
+    padding-bottom: 137px;
 
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 50px;
-        padding-top: 80px;
+        padding-top: 50px;
     }
 
     &__logo-title {
@@ -38,9 +39,11 @@
     }
 
     &__cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        gap: 56px 40px;
+        padding-top: 10px;
     }
 
     &__link {
@@ -53,6 +56,8 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
+    top: 37px;
 
     &__btn {
         display: inline-flex;
