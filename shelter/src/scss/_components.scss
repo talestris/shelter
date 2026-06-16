@@ -51,11 +51,18 @@ h1 {
     &__link {
         @include text-style($font-second, 15px, $lh: 152%, $ls: 0.001em);
         color: $color-grey;
+        border-bottom: 3px solid transparent;
     }
 }
 
 .link {
     letter-spacing: 0.018em;
+}
+
+.active-link {
+    border-bottom: 3px solid $color-primary;
+    cursor: default;
+    pointer-events: none;
 }
 
 .button {
@@ -84,6 +91,13 @@ h1 {
     justify-content: space-between;
     gap: 30px;
     background-color: $color-light;
+    cursor: pointer;
+
+    &:hover {
+        .card__button {
+            background-color: $color-primary;
+        }
+    }
 
     &__img {
         width: 270px;
@@ -100,6 +114,7 @@ h1 {
         align-self: center;
         position: relative;
         bottom: 0.1em;
+        transition: background-color 0.3s ease;
     }
 }
 
@@ -140,6 +155,7 @@ h1 {
         display: inline-flex;
         align-items: center;
         gap: 20px;
+        cursor: pointer;
     }
 
     &__puppy {

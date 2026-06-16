@@ -11,16 +11,16 @@
 <body>
     <header class="header pets-header">
         <div class="container header__container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <h1 class="logo__title pets__logo-title">Cozy House</h1>
                 <span class="logo__subtitle pets__logo-subtitle">Shelter for pets in Boston</span>
-            </div>
+            </a>
             <nav class="nav">
                 <ul class="menu">
-                    <li class="menu__link"><a href="" class="link pets__link">About the shelter</a></li>
-                    <li class="menu__link"><a href="" class="link pets__link">Our pets</a></li>
-                    <li class="menu__link"><a href="" class="link pets__link">Help the shelter</a></li>
-                    <li class="menu__link"><a href="" class="link pets__link">Contacts</a></li>
+                    <li class="menu__link"><a href="index.html" class="link pets__link">About the shelter</a></li>
+                    <li class="menu__link active-link"><a href="" class="link pets__link">Our pets</a></li>
+                    <li class="menu__link"><a href="index.html#help" class="link pets__link">Help the shelter</a></li>
+                    <li class="menu__link"><a href="#contacts" class="link pets__link">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -72,12 +72,12 @@
                     </article>
                 </div>
                 <div class="pagination">
-                    <button class="pagination__btn pag-inactive-left" type="button" aria-label="previous-pages">
+                    <button class="pagination__btn pagination__inactive" type="button" aria-label="previous-pages">
                         <img src="../../assets/svg/pag-inactive-left.svg" alt="" class="pagination__icon">
-                    </button><button class="pagination__btn pag-inactive-left2" type="button"
+                    </button><button class="pagination__btn pagination__inactive" type="button"
                         aria-label="previous-page">
                         <img src="../../assets/svg/pag-inactive-left2.svg" alt="" class="pagination__icon">
-                    </button><button class="pagination__btn pag_1" type="button" aria-label="this-page">
+                    </button><button class="pagination__btn pagination__active" type="button" aria-label="this-page">
                         <img src="../../assets/svg/pag_1.svg" alt="" class="pagination__icon">
                     </button><button class="pagination__btn pag-right2" type="button" aria-label="next-page">
                         <img src="../../assets/svg/pag-right2.svg" alt="" class="pagination__icon">
@@ -89,27 +89,29 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="container footer__container">
+        <div class="container footer__container" id="contacts">
             <div class="footer__content">
                 <div class="footer__item footer__contacts">
                     <h2 class="section__title footer__title">For questions<br>and suggestions</h2>
-                    <a class="footer__link contacts__mail">
+                    <a href="mailto:email@shelter.com" class="footer__link contacts__mail">
                         <img src="../../assets/svg/icon-mail.svg" alt="icon-mail" class="mail__icon">
                         <span class="footer__subtitle mail__txt">email@shelter.com</span>
                     </a>
-                    <a class="footer__link contacts__phone">
+                    <a href="tel:+136745677554" class="footer__link contacts__phone">
                         <img src="../../assets/svg/icon-phone.svg" alt="icon-phone" class="phone__icon">
-                        <span class="footer__subtitle phone__number">+13 674 567 75 54</span>
+                        <span class="footer__subtitle phone__number">+13&nbsp;674&nbsp;567&nbsp;75&nbsp;54</span>
                     </a>
                 </div>
                 <div class="footer__item footer__locations">
                     <h2 class="footer__title">We are waiting<br>for your visit</h2>
-                    <a class="footer__link locations__boston">
+                    <a href="https://www.google.com/maps/place/%D0%91%D0%BE%D1%81%D1%82%D0%BE%D0%BD,+%D0%9C%D0%B0%D1%81%D1%81%D0%B0%D1%87%D1%83%D1%81%D0%B5%D1%82%D1%81,+%D0%A1%D0%A8%D0%90/@42.3143655,-70.9700245,11z/data=!3m1!4b1!4m6!3m5!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3555076!4d-71.0565364!16zL20vMDFjeF8?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="footer__link locations__boston">
                         <img src="../../assets/svg/icon-pin.svg" alt="icon-pin" class="locations__icon">
                         <span class="footer__subtitle locations__txt">1 Central Street, Boston<br>(entrance from the
                             store)</span>
                     </a>
-                    <a class="footer__link locations__london">
+                    <a href="https://www.google.com/maps/search/London,%20UK" target="_blank"
+                        class="footer__link locations__london">
                         <img src="../../assets/svg/icon-pin.svg" alt="icon-pin" class="locations__icon">
                         <span class="footer__subtitle locations__txt">18 South Park, London </span>
                     </a>

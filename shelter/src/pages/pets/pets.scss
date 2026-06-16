@@ -72,6 +72,14 @@
         flex-shrink: 0;
     }
 
+    &__inactive {
+        border: 2px solid $color-grey;
+    }
+
+    &__active {
+        background-color: $color-primary;
+    }
+
     &__icon {
         object-fit: contain;
         flex-shrink: 0;
