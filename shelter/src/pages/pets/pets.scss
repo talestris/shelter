@@ -59,6 +59,10 @@
     position: relative;
     top: 37px;
 
+    &:hover {
+        background-color: $color-primary-light;
+    }
+
     &__btn {
         display: inline-flex;
         justify-content: center;

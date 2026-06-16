@@ -77,6 +77,10 @@ h1 {
     padding: 15px 45px;
     align-self: flex-start;
 
+    &:hover {
+        background-color: $color-primary-light;
+    }
+
     &__second {
         background-color: transparent;
     }
@@ -95,7 +99,7 @@ h1 {
 
     &:hover {
         .card__button {
-            background-color: $color-primary;
+            background-color: $color-primary-light;
         }
     }
 
