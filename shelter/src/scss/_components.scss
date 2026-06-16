@@ -53,6 +53,14 @@ h1 {
         color: $color-grey;
         border-bottom: 3px solid transparent;
     }
+
+    &__link:hover {
+        color: $color-black;
+    }
+
+    &__link:active {
+        border-bottom: 3px solid $color-primary;
+    }
 }
 
 .link {
