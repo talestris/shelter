@@ -151,6 +151,11 @@
         background: transparent;
         cursor: pointer;
     }
+
+    .arrow-left:hover,
+    .arrow-right:hover {
+        background-color: $color-primary-light;
+    }
 }
 
 .slider__window {
