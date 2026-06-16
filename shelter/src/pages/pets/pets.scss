@@ -53,10 +53,6 @@
     &__link:hover {
         color: $color-black;
     }
-
-    &__link:active {
-        border-bottom: 3px solid $color-primary;
-    }
 }
 
 .pagination {
