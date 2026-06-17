@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 180px;
+    padding-top: 11.25rem;
 
     &__container {
         display: flex;
@@ -21,21 +21,21 @@
     &__content {
         display: flex;
         flex-direction: column;
-        max-width: 460px;
+        max-width: 28.75rem;
         width: 100%;
         justify-content: flex-start;
-        gap: 40px;
+        gap: 2.5rem;
         position: relative;
         bottom: 2.4em;
     }
 
     &__title {
-        @include text-style($font-main, 44px, $lh: 130%, $ls: 0.001em);
+        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em);
         color: $color-white;
     }
 
     &__subtitle {
-        @include text-style($font-second, 15px, $lh: 160%, $ls: 0);
+        @include text-style($font-second, 0.938rem, $lh: 160%, $ls: 0);
         color: $color-grey;
     }
 
@@ -57,21 +57,21 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 1200px;
+        max-width: 75rem;
         width: 100%;
-        gap: 120px;
-        padding: 0 175px;
+        gap: 7.5rem;
+        padding: 0 10.938rem;
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 20px;
+        gap: 1.25rem;
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 129%);
+        @include text-style($font-main, 2.188rem, $lh: 129%);
         color: $color-dark-1;
         position: relative;
         bottom: 0.14em;
@@ -100,7 +100,7 @@
     padding-right: 0;
     background-color: $color-grey-1;
     padding-top: 0;
-    padding-bottom: 55px;
+    padding-bottom: 3.438rem;
 }
 
 .our-friends__container {
@@ -108,15 +108,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 44px;
+    gap: 2.75rem;
     padding-left: 0;
     padding-right: 0;
     padding-top: 6em;
-    padding-bottom: 57px;
+    padding-bottom: 3.563rem;
 }
 
 .our-friends__title {
-    @include text-style($font-main, 35px, $lh: 130%);
+    @include text-style($font-main, 2.188rem, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
     position: relative;
@@ -133,7 +133,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 75rem;
     width: 100%;
 
     .arrow-left,
@@ -141,9 +141,9 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 52px;
-        height: 52px;
-        border: 2px solid $color-primary;
+        width: 3.25rem;
+        height: 3.25rem;
+        border: 0.125rem solid $color-primary;
         border-radius: 50%;
         background: transparent;
         cursor: pointer;
@@ -157,14 +157,14 @@
 }
 
 .slider__window {
-    width: 980px;
+    width: 61.25rem;
     overflow: hidden;
 }
 
 .slider__row {
     display: flex;
     justify-content: space-around;
-    gap: 87px;
+    gap: 5.438rem;
 }
 
 .card__1 {
@@ -181,12 +181,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    padding: 80px 40px;
+    gap: 3.75rem;
+    padding: 5rem 2.5rem;
 }
 
 .help__title {
-    @include text-style($font-main, 35px, $lh: 130%);
+    @include text-style($font-main, 2.188rem, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
 }
@@ -194,10 +194,10 @@
 .help__list {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1026px;
+    max-width: 64.125rem;
     width: 100%;
     justify-content: center;
-    gap: 119px;
+    gap: 7.438rem;
     row-gap: 3.5em;
 }
 
@@ -210,12 +210,12 @@
 }
 
 .help-item__img {
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
 }
 
 .help-item__txt {
-    @include text-style($font-main, 20px, $lh: 115%);
+    @include text-style($font-main, 1.25rem, $lh: 115%);
     text-align: center;
     color: $color-dark-1;
 }
@@ -231,9 +231,9 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 915px;
+        max-width: 57.188rem;
         width: 100%;
-        gap: 30px;
+        gap: 1.875rem;
         padding: 0;
     }
 
@@ -241,25 +241,25 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 25px;
+        gap: 1.563rem;
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 130%);
+        @include text-style($font-main, 2.188rem, $lh: 130%);
         color: $color-dark-1;
         position: relative;
         top: 0.4em;
     }
 
     &__subtitle {
-        @include text-style($font-main, 15px);
+        @include text-style($font-main, 0.938rem);
         color: $color-dark-1;
         position: relative;
         top: 0.5em;
     }
 
     &__txt {
-        @include text-style($font-second, 12px, $lh: 150%, $ls: 0, $style: italic);
+        @include text-style($font-second, 0.75rem, $lh: 150%, $ls: 0, $style: italic);
         color: $color-dark-3;
     }
 
@@ -270,10 +270,10 @@
 }
 
 .credit-card {
-    border-radius: 9px;
-    padding: 10px 15px;
-    width: 349px;
-    height: 43px;
+    border-radius: 0.563rem;
+    padding: 0.625rem 0.938rem;
+    width: 21.813rem;
+    height: 2.688rem;
     background-color: $color-primary;
     position: relative;
     top: 0.15em;
@@ -286,7 +286,7 @@
     }
 
     &__number {
-        @include text-style($font-main, 20px, $lh: 115%);
+        @include text-style($font-main, 1.25rem, $lh: 115%);
         color: $color-dark-1;
     }
 }
