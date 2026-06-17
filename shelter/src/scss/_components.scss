@@ -20,6 +20,10 @@
         display: flex;
         align-items: center;
     }
+
+    &__burger {
+        display: none;
+    }
 }
 
 .logo {
