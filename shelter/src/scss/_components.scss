@@ -21,8 +21,37 @@
         align-items: center;
     }
 
-    &__burger {
+    .burger {
         display: none;
+        width: 1.875rem;
+        height: 1.375rem;
+        position: relative;
+        cursor: pointer;
+
+        &__line,
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0.125rem;
+            background-color: $color-primary;
+        }
+
+        &::before {
+            content: "";
+            top: 0;
+        }
+
+        &__line {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            content: "";
+            bottom: 0;
+        }
     }
 }
 
