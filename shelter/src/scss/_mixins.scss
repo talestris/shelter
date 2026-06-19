@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use 'sass:math';
 @use '../scss/variables' as *;
 
 
@@ -8,4 +10,14 @@
     font-style: $style;
     line-height: $lh;
     letter-spacing: $ls;
+}
+
+@mixin media-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media only screen and (max-width: $value) {
+            @content;
+        }
+    }
 }

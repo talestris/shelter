@@ -11,3 +11,10 @@ $color-light: #FAFAFA;
 
 $font-main: 'Georgia', sans-serif;
 $font-second: 'Arial', serif;
+
+$breakpoints: (
+    "desktop-middle": 64rem,
+    "laptop": 48rem,
+    "tablet": 33.75rem,
+    "mobile": 20rem
+);
