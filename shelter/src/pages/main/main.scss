@@ -30,7 +30,7 @@
     }
 
     &__title {
-        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em);
+        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em, $min-size: 1.563);
         color: $color-white;
     }
 
