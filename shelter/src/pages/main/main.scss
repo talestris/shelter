@@ -71,7 +71,7 @@
     }
 
     &__title {
-        @include text-style($font-main, 2.188rem, $lh: 129%);
+        line-height: 129%;
         color: $color-dark-1;
         position: relative;
         bottom: 0.14em;
@@ -116,7 +116,6 @@
 }
 
 .our-friends__title {
-    @include text-style($font-main, 2.188rem, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
     position: relative;
@@ -186,7 +185,6 @@
 }
 
 .help__title {
-    @include text-style($font-main, 2.188rem, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
 }
@@ -245,7 +243,6 @@
     }
 
     &__title {
-        @include text-style($font-main, 2.188rem, $lh: 130%);
         color: $color-dark-1;
         position: relative;
         top: 0.4em;

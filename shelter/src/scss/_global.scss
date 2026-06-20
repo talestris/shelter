@@ -1,4 +1,5 @@
 @use '../scss/variables' as *;
+@use '../scss/mixins' as *;
 
 @font-face {
     font-family: 'Georgia';
@@ -59,4 +60,8 @@ ul {
 .container {
     max-width: 80rem;
     margin: 0 auto;
+}
+
+.section__title {
+    @include text-style($font-main, 2.188rem, $lh: 130%);
 }
