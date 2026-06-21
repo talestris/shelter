@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../../scss/global' as *;
 @use '../../scss/variables' as *;
 @use '../../scss/components' as *;
@@ -10,12 +11,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 11.25rem;
+    padding-top: fluid-clamp-rem(9.375rem,
+            11.25rem,
+            map.get($breakpoints, 'laptop'),
+            map.get($breakpoints, 'desktop-middle'));
+
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 6.188rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 6.25rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 
     &__container {
         display: flex;
         align-items: center;
         gap: 2.6em;
+        width: 100%;
+        padding-left: 2.5rem;
+
+        @include media-to('laptop') {
+            flex-direction: column;
+            padding-left: 0;
+            gap: 6.25rem;
+        }
     }
 
     &__content {
@@ -27,10 +44,18 @@
         gap: 2.5rem;
         position: relative;
         bottom: 2.4em;
+
+        @include media-to('laptop') {
+            bottom: 0;
+
+            .button__first {
+                align-self: center;
+            }
+        }
     }
 
     &__title {
-        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em, $min-size: 1.563);
+        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em, $min-size: 1.563rem);
         color: $color-white;
     }
 
@@ -40,7 +65,15 @@
     }
 
     &__image {
+        display: flex;
         align-self: flex-end;
+        max-width: 100%;
+        height: auto;
+
+        @include media-to('laptop') {
+            position: relative;
+            left: 4.35rem;
+        }
     }
 }
 
@@ -53,6 +86,17 @@
 .about {
     padding-bottom: 6em;
 
+    @include media-to('laptop') {
+        padding-top: fluid-clamp-rem(2.625rem,
+                5.45rem,
+                map.get($breakpoints, 'mobile'),
+                map.get($breakpoints, 'laptop'));
+        padding-bottom: fluid-clamp-rem(2.625rem,
+                5.9rem,
+                map.get($breakpoints, 'mobile'),
+                map.get($breakpoints, 'laptop'));
+    }
+
     &__container {
         display: flex;
         justify-content: space-around;
@@ -61,6 +105,13 @@
         width: 100%;
         gap: 7.5rem;
         padding: 0 10.938rem;
+
+        @include media-to('laptop') {
+            flex-direction: column-reverse;
+            gap: 5rem;
+            padding-left: fluid-clamp-rem(0.625rem, 8.2rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+            padding-right: fluid-clamp-rem(0.625rem, 7.63rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        }
     }
 
     &__content {
@@ -86,12 +137,26 @@
         position: relative;
         right: 0.55em;
         bottom: 0.1em;
+
+        @include media-to('laptop') {
+            right: 0.1em;
+            bottom: 0.3em;
+        }
     }
 
     &__paragraph2 {
         position: relative;
         line-height: 160%;
         letter-spacing: unset;
+
+        @include media-to('laptop') {
+            letter-spacing: 0.002em;
+        }
+    }
+
+    &__image {
+        position: relative;
+        right: 0.3rem;
     }
 }
 
@@ -101,6 +166,11 @@
     background-color: $color-grey-1;
     padding-top: 0;
     padding-bottom: 3.438rem;
+
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 0.855rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 0.855rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 }
 
 .our-friends__container {
@@ -135,6 +205,10 @@
     max-width: 75rem;
     width: 100%;
 
+    @include media-to('laptop') {
+        justify-content: space-evenly;
+    }
+
     .arrow-left,
     .arrow-right {
         display: inline-flex;
@@ -158,17 +232,29 @@
 .slider__window {
     width: 61.25rem;
     overflow: hidden;
+
+    @include media-to('laptop') {
+        width: 36.25rem;
+    }
 }
 
 .slider__row {
     display: flex;
     justify-content: space-around;
     gap: 5.438rem;
+
+    @include media-to('laptop') {
+        gap: 2.5rem;
+    }
 }
 
 .card__1 {
     position: relative;
     right: 0.3em;
+
+    @include media-to('laptop') {
+        right: 0;
+    }
 }
 
 .help {
@@ -197,6 +283,12 @@
     justify-content: center;
     gap: 7.438rem;
     row-gap: 3.5em;
+
+    @include media-to('laptop') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.4rem;
+    }
 }
 
 .help__item {
@@ -225,6 +317,15 @@
     padding-top: 4.3em;
     padding-bottom: 6em;
 
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 8.188rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 8.25rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-bottom: fluid-clamp-rem(2.625rem,
+                6.5rem,
+                map.get($breakpoints, 'mobile'),
+                map.get($breakpoints, 'laptop'));
+    }
+
     &__container {
         display: flex;
         justify-content: space-around;
@@ -233,6 +334,11 @@
         width: 100%;
         gap: 1.875rem;
         padding: 0;
+
+        @include media-to('laptop') {
+            flex-direction: column-reverse;
+            gap: 3.1rem;
+        }
     }
 
     &__content {
@@ -240,6 +346,8 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 1.563rem;
+        max-width: 23.75rem;
+        width: 100%;
     }
 
     &__title {

@@ -22,7 +22,7 @@
     letter-spacing: $ls;
 
     @if $min-size {
-        font-size: fluid-clamp-rem($min-size, $size, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'desktop-middle'));
+        font-size: fluid-clamp-rem($min-size, $size, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
     }
 
     @else {

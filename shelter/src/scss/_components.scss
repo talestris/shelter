@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../scss/variables' as *;
 @use '../scss/global' as *;
 @use '../scss/mixins' as *;
@@ -14,11 +15,11 @@
         justify-content: space-between;
         align-items: center;
         max-width: 75rem;
-    }
+        width: 100%;
 
-    &__content {
-        display: flex;
-        align-items: center;
+        @include media-to('laptop') {
+            max-width: 44.25rem;
+        }
     }
 
     .burger {
@@ -117,7 +118,7 @@ h1 {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    padding: 0.938rem 2.813rem;
+    padding: 0.91rem 2.7rem;
     align-self: flex-start;
 
     &:hover {
@@ -141,6 +142,12 @@ h1 {
     background-color: $color-light;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:nth-child(3) {
+        @include media-to('laptop') {
+            display: none;
+        }
+    }
 
     &:hover {
         background-color: $color-white;
@@ -175,6 +182,12 @@ h1 {
     background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
     padding: 2.5rem 2.5rem 0 2.5rem;
 
+    @include media-to('laptop') {
+        padding-top: 0.9rem;
+        padding-left: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
+
     &__container {
         max-width: 75rem;
         width: 100%;
@@ -184,6 +197,12 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+
+        @include media-to('laptop') {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            row-gap: 4.063rem;
+        }
     }
 
     &__item {
@@ -218,6 +237,10 @@ h1 {
     &__puppy {
         position: relative;
         right: 0.1em;
+
+        @include media-to('laptop') {
+            right: 0;
+        }
     }
 }
 
