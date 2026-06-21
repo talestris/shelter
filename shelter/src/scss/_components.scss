@@ -14,12 +14,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 75rem;
         width: 100%;
-
-        @include media-to('laptop') {
-            max-width: 44.25rem;
-        }
     }
 
     .burger {
@@ -180,7 +175,7 @@ h1 {
 
 .footer {
     background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
-    padding: 2.5rem 2.5rem 0 2.5rem;
+    padding: 2.5rem 0 0 0;
 
     @include media-to('laptop') {
         padding-top: 0.9rem;
@@ -189,7 +184,6 @@ h1 {
     }
 
     &__container {
-        max-width: 75rem;
         width: 100%;
     }
 
@@ -197,11 +191,13 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: fluid-clamp-rem(2rem, 4rem, map.get($breakpoints, 'laptop'), 80rem);
 
         @include media-to('laptop') {
             flex-wrap: wrap;
             justify-content: space-around;
-            row-gap: 4.063rem;
+            row-gap: 3.75rem;
+            column-gap: 3.75rem;
         }
     }
 
@@ -211,6 +207,8 @@ h1 {
         justify-content: flex-start;
         gap: 2rem;
         padding-top: 1.04em;
+        max-width: 20rem;
+        width: 100%;
     }
 
     &__locations {
@@ -242,18 +240,4 @@ h1 {
             right: 0;
         }
     }
-}
-
-.contacts__mail {
-    position: relative;
-    top: 0.6em;
-}
-
-.contacts__phone {
-    position: relative;
-    top: 1.2em;
-}
-
-.phone__number {
-    white-space: nowrap;
 }

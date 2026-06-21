@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../scss/variables' as *;
 @use '../scss/mixins' as *;
 
@@ -59,7 +60,13 @@ ul {
 
 .container {
     max-width: 80rem;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+
+    @media only screen and (min-width: #{map.get($breakpoints, 'laptop')}) {
+        padding: 0 fluid-clamp-rem(1.875rem, 2.5rem, map.get($breakpoints, 'laptop'), 80rem);
+    }
 }
 
 .section__title {

@@ -42,11 +42,8 @@
         width: 100%;
         justify-content: flex-start;
         gap: 2.5rem;
-        position: relative;
-        bottom: 2.4em;
 
         @include media-to('laptop') {
-            bottom: 0;
 
             .button__first {
                 align-self: center;
@@ -315,7 +312,7 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 4.3em;
-    padding-bottom: 6em;
+    padding-bottom: 6.05em;
 
     @include media-to('laptop') {
         padding-left: fluid-clamp-rem(0.625rem, 8.188rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
