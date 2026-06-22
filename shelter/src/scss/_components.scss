@@ -1,10 +1,11 @@
+@use 'sass:map';
 @use '../scss/variables' as *;
 @use '../scss/global' as *;
 @use '../scss/mixins' as *;
 
 .header {
     position: absolute;
-    top: 30px;
+    top: 1.875rem;
     left: 0;
     width: 100%;
     z-index: 1;
@@ -13,12 +14,51 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        width: 100%;
+
+        @include media-to('mobile') {
+            max-width: 18.75rem;
+        }
     }
 
-    &__content {
-        display: flex;
-        align-items: center;
+    .burger {
+        display: none;
+        width: 1.875rem;
+        height: 1.375rem;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        background-color: transparent;
+        border: none;
+
+        @include media-to('tablet-max') {
+            display: flex;
+        }
+
+        &__line,
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0.125rem;
+            background-color: $color-primary;
+        }
+
+        &::before {
+            content: "";
+            top: 0;
+        }
+
+        &__line {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            content: "";
+            bottom: 0;
+        }
     }
 }
 
@@ -26,32 +66,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
     cursor: pointer;
 
     &__subtitle {
-        @include text-style($font-second, 13px, $ls: 0.1em);
+        @include text-style($font-second, 0.813rem, $ls: 0.1em);
         color: $color-white;
-        padding-left: 4px;
+        padding-left: 0.25rem;
     }
 }
 
 h1 {
-    @include text-style($font-main, 32px);
+    @include text-style($font-main, 2rem);
     margin: 0;
     color: $color-primary;
+}
+
+.nav {
+    @include media-to('tablet-max') {
+        display: none;
+    }
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 2rem;
 
     &__link {
-        @include text-style($font-second, 15px, $lh: 152%, $ls: 0.001em);
+        @include text-style($font-second, 0.938rem, $lh: 152%, $ls: 0.001em);
         color: $color-grey;
-        border-bottom: 3px solid transparent;
+        border-bottom: 0.188rem solid transparent;
     }
 
     &__link:hover {
@@ -59,7 +105,8 @@ h1 {
     }
 
     &__link:active {
-        border-bottom: 3px solid $color-primary;
+        border-bottom: 0.188rem solid $color-primary;
+        transition: border-bottom 0.3s ease-in-out;
     }
 }
 
@@ -68,21 +115,21 @@ h1 {
 }
 
 .active-link {
-    border-bottom: 3px solid $color-primary;
+    border-bottom: 0.188rem solid $color-primary;
     cursor: default;
     pointer-events: none;
 }
 
 .button {
-    @include text-style($font-main, 17px, $lh: 130%);
+    @include text-style($font-main, 1.063rem, $lh: 130%);
     color: $color-black;
-    border: 2px solid $color-primary;
-    border-radius: 100px;
+    border: 0.125rem solid $color-primary;
+    border-radius: 6.25rem;
     background-color: $color-primary;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    padding: 15px 45px;
+    padding: 0.91rem 2.7rem;
     align-self: flex-start;
 
     &:hover {
@@ -99,17 +146,29 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 270px;
-    height: 435px;
-    border-radius: 9px;
-    gap: 30px;
+    width: 16.875rem;
+    height: 27.188rem;
+    border-radius: 0.563rem;
+    gap: 1.875rem;
     background-color: $color-light;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
+    &:nth-child(3) {
+        @include media-to('desktop-middle') {
+            display: none;
+        }
+    }
+
+    &:nth-child(2) {
+        @include media-to('tablet-max') {
+            display: none;
+        }
+    }
+
     &:hover {
         background-color: $color-white;
-        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+        box-shadow: 0 0.125rem 2.188rem 0.875rem rgba(13, 13, 13, 0.04);
 
         .card__button {
             background-color: $color-primary-light;
@@ -118,12 +177,12 @@ h1 {
     }
 
     &__img {
-        width: 270px;
-        height: 270px;
+        width: 16.875rem;
+        height: 16.875rem;
     }
 
     &__title {
-        @include text-style($font-main, 20px);
+        @include text-style($font-main, 1.25rem);
         text-align: center;
         color: $color-dark-1;
     }
@@ -138,10 +197,15 @@ h1 {
 
 .footer {
     background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
-    padding: 40px 40px 0 40px;
+    padding: 2.5rem 0 0 0;
+
+    @include media-to('laptop') {
+        padding-top: 0.8rem;
+        padding-left: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 
     &__container {
-        max-width: 1200px;
         width: 100%;
     }
 
@@ -149,54 +213,57 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+
+        @include media-to('desktop-middle') {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 4.1rem;
+            column-gap: 4rem;
+        }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 32px;
+        gap: 2rem;
         padding-top: 1.04em;
+        max-width: 18rem;
+        width: 100%;
+    }
+
+    &__contacts {
+        gap: 2.65rem;
+        max-width: 17.6rem;
     }
 
     &__locations {
-        position: relative;
-        right: 0.3em;
+        gap: 2rem;
+        max-width: 18.875rem;
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 130%);
         color: $color-white;
     }
 
     &__subtitle {
-        @include text-style($font-main, 20px, $lh: 115%);
+        @include text-style($font-main, 1.25rem, $lh: 115%);
         color: $color-primary;
     }
 
     &__link {
         display: inline-flex;
         align-items: center;
-        gap: 20px;
+        gap: 1.25rem;
         cursor: pointer;
     }
 
     &__puppy {
         position: relative;
         right: 0.1em;
+
+        @include media-to('laptop') {
+            right: 0;
+        }
     }
-}
-
-.contacts__mail {
-    position: relative;
-    top: 0.6em;
-}
-
-.contacts__phone {
-    position: relative;
-    top: 1.2em;
-}
-
-.phone__number {
-    white-space: nowrap;
 }

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../../scss/global' as *;
 @use '../../scss/variables' as *;
 @use '../../scss/components' as *;
@@ -8,39 +9,100 @@
     position: relative;
     background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-top: 180px;
+    padding-top: 11.25rem;
+    padding-bottom: 0;
+
+    @include media-to('desktop-middle') {
+        padding-top: fluid-clamp-rem(9.375rem, 11.25rem, map.get($breakpoints, 'laptop'), map.get($breakpoints, 'desktop-middle'));
+        flex-direction: column;
+    }
+
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 6.188rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 6.25rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 
     &__container {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-end;
         gap: 2.6em;
+        width: 100%;
+        padding-left: 2.5rem;
+
+        @include media-to('desktop-middle') {
+            gap: 1.5rem;
+        }
+
+        @include media-to('laptop') {
+            flex-direction: column;
+            padding-left: 0;
+            gap: 6.25rem;
+            padding-right: 0;
+            align-items: center;
+        }
+
+        @include media-to('mobile') {
+            gap: 6.6rem;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        max-width: 460px;
+        max-width: 28.75rem;
         width: 100%;
         justify-content: flex-start;
-        gap: 40px;
-        position: relative;
-        bottom: 2.4em;
+        gap: 2.5rem;
+        margin-bottom: 15.1rem;
+
+        @include media-to('laptop') {
+            margin-bottom: 0;
+
+            .button__first {
+                align-self: center;
+            }
+        }
+
+        @include media-to('mobile') {
+            align-items: center;
+        }
     }
 
     &__title {
-        @include text-style($font-main, 44px, $lh: 130%, $ls: 0.001em);
+        @include text-style($font-main, 2.75rem, $lh: 130%, $ls: 0.001em, $min-size: 1.563rem);
         color: $color-white;
+
+        @include media-to('mobile') {
+            letter-spacing: 0.06em;
+            text-align: center;
+        }
     }
 
     &__subtitle {
-        @include text-style($font-second, 15px, $lh: 160%, $ls: 0);
+        @include text-style($font-second, 0.938rem, $lh: 160%, $ls: 0);
         color: $color-grey;
+
+        @include media-to('mobile') {
+            text-align: center;
+        }
     }
 
     &__image {
+        display: flex;
         align-self: flex-end;
+        max-width: 100%;
+        height: auto;
+
+        @include media-to('laptop') {
+            max-width: 35.563rem;
+            width: 100%;
+        }
+
+        @include media-to(mobile) {
+            max-width: 16.25rem;
+        }
     }
 }
 
@@ -51,30 +113,54 @@
 }
 
 .about {
-    padding-bottom: 6em;
+    padding-top: fluid-clamp-rem(2.625rem, 5rem, map.get($breakpoints, 'desktop-middle'), 80rem);
+    padding-bottom: fluid-clamp-rem(2.625rem, 5.9rem, map.get($breakpoints, 'desktop-middle'), 80rem);
+    padding-left: fluid-clamp-rem(0.625rem, 10.313rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    padding-right: fluid-clamp-rem(0.625rem, 10.313rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+
+    @include media-to('laptop') {
+        padding-top: fluid-clamp-rem(2.625rem, 5rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-bottom: fluid-clamp-rem(2.625rem, 6.1rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 
     &__container {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        max-width: 1200px;
+        max-width: 75rem;
         width: 100%;
-        gap: 120px;
-        padding: 0 175px;
+        gap: fluid-clamp-rem(2rem, 7.2rem, map.get($breakpoints, 'desktop-middle'), 80rem);
+
+        @include media-to('desktop-middle') {
+            flex-direction: column-reverse;
+            gap: 5.2rem;
+        }
+
+        @include media-to('mobile') {
+            gap: 2.5rem;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 20px;
+        gap: 1.25rem;
+        max-width: 26.875rem;
+        width: 100%;
+
+        @include media-to('mobile') {
+            max-width: 18.5rem;
+        }
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 129%);
+        line-height: 134%;
         color: $color-dark-1;
-        position: relative;
-        bottom: 0.14em;
+
+        @include media-to('mobile') {
+            text-align: center;
+        }
     }
 
     &__subtitle {
@@ -83,15 +169,39 @@
     }
 
     &__paragraph1 {
-        position: relative;
-        right: 0.55em;
-        bottom: 0.1em;
+        letter-spacing: unset;
+
+        @include media-to('mobile') {
+            letter-spacing: 0.02em;
+        }
     }
 
     &__paragraph2 {
-        position: relative;
         line-height: 160%;
         letter-spacing: unset;
+
+        @include media-to('laptop') {
+            letter-spacing: 0.002em;
+        }
+    }
+
+    &__image {
+        max-width: 18.75rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: auto;
+
+        @include media-to('mobile') {
+            max-width: 16.25rem;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -100,7 +210,12 @@
     padding-right: 0;
     background-color: $color-grey-1;
     padding-top: 0;
-    padding-bottom: 55px;
+    padding-bottom: 3.438rem;
+
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 0.855rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 0.855rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
 }
 
 .our-friends__container {
@@ -108,15 +223,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 44px;
+    gap: 2.75rem;
     padding-left: 0;
     padding-right: 0;
     padding-top: 6em;
-    padding-bottom: 57px;
+    padding-bottom: 3.563rem;
 }
 
 .our-friends__title {
-    @include text-style($font-main, 35px, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
     position: relative;
@@ -131,22 +245,46 @@
 
 .slider__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    max-width: 75rem;
     width: 100%;
+    gap: fluid-clamp-rem(0.75rem, 3.313rem, map.get($breakpoints, 'laptop'), 80rem);
+
+    @include media-to('laptop') {
+        justify-content: space-evenly;
+    }
+
+    @include media-to('tablet') {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem 5rem;
+        margin: 0 auto;
+    }
 
     .arrow-left,
     .arrow-right {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 52px;
-        height: 52px;
-        border: 2px solid $color-primary;
+        width: 3.25rem;
+        height: 3.25rem;
+        border: 0.125rem solid $color-primary;
         border-radius: 50%;
         background: transparent;
         cursor: pointer;
+    }
+
+    .arrow-left {
+        @include media-to('tablet') {
+            order: 2;
+        }
+    }
+
+    .arrow-right {
+        @include media-to('tablet') {
+            order: 3;
+        }
     }
 
     .arrow-left:hover,
@@ -157,19 +295,39 @@
 }
 
 .slider__window {
-    width: 980px;
+    max-width: 61.25rem;
+    width: 100%;
     overflow: hidden;
+
+    @include media-to('desktop-middle') {
+        max-width: 36.25rem;
+    }
+
+    @include media-to('tablet-max') {
+        max-width: 25rem;
+    }
+
+    @include media-to('tablet') {
+        order: 1;
+    }
+
+    @include media-to('mobile') {
+        max-width: 16.875rem;
+    }
 }
 
 .slider__row {
     display: flex;
     justify-content: space-around;
-    gap: 87px;
-}
+    gap: 5.438rem;
 
-.card__1 {
-    position: relative;
-    right: 0.3em;
+    @media (max-width: 1200px) {
+        gap: 0;
+    }
+
+    @include media-to('tablet-max') {
+        gap: 3rem;
+    }
 }
 
 .help {
@@ -181,12 +339,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    padding: 80px 40px;
+    gap: 3.75rem;
+    padding: 5rem 2.5rem;
 }
 
 .help__title {
-    @include text-style($font-main, 35px, $lh: 130%);
     color: $color-dark-1;
     text-align: center;
 }
@@ -194,11 +351,21 @@
 .help__list {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1026px;
+    max-width: 64.125rem;
     width: 100%;
     justify-content: center;
-    gap: 119px;
+    gap: 7.438rem;
     row-gap: 3.5em;
+
+    @include media-to('laptop') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.4rem;
+    }
+
+    @include media-to('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .help__item {
@@ -210,12 +377,12 @@
 }
 
 .help-item__img {
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
 }
 
 .help-item__txt {
-    @include text-style($font-main, 20px, $lh: 115%);
+    @include text-style($font-main, 1.25rem, $lh: 115%);
     text-align: center;
     color: $color-dark-1;
 }
@@ -225,58 +392,90 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 4.3em;
-    padding-bottom: 6em;
+    padding-bottom: 6.15em;
+
+    @include media-to('laptop') {
+        padding-left: fluid-clamp-rem(0.625rem, 8.188rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-right: fluid-clamp-rem(0.625rem, 8.25rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+        padding-bottom: fluid-clamp-rem(2.625rem,
+                6.35rem,
+                map.get($breakpoints, 'mobile'),
+                map.get($breakpoints, 'laptop'));
+    }
 
     &__container {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 915px;
+        max-width: 57.188rem;
         width: 100%;
-        gap: 30px;
+        gap: 1.875rem;
         padding: 0;
+
+        @include media-to('desktop-middle') {
+            flex-direction: column-reverse;
+        }
+
+        @include media-to('laptop') {
+            gap: 3.1rem;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 25px;
+        gap: 1.563rem;
+        max-width: 23.75rem;
+        width: 100%;
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 130%);
         color: $color-dark-1;
         position: relative;
         top: 0.4em;
     }
 
     &__subtitle {
-        @include text-style($font-main, 15px);
+        @include text-style($font-main, 0.938rem);
         color: $color-dark-1;
         position: relative;
         top: 0.5em;
     }
 
     &__txt {
-        @include text-style($font-second, 12px, $lh: 150%, $ls: 0, $style: italic);
+        @include text-style($font-second, 0.75rem, $lh: 150%, $ls: 0, $style: italic);
         color: $color-dark-3;
     }
 
     &__image {
-        position: relative;
-        top: 0.5em;
+        max-width: 31.563rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .donation-dog {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 
 .credit-card {
-    border-radius: 9px;
-    padding: 10px 15px;
-    width: 349px;
-    height: 43px;
+    border-radius: 0.563rem;
+    padding: 0.625rem 0.938rem;
+    max-width: 21.813rem;
+    width: 100%;
+    height: 2.688rem;
     background-color: $color-primary;
     position: relative;
     top: 0.15em;
+
+    @include media-to('tablet') {
+        max-width: 17.563rem;
+    }
 
     &__content {
         display: flex;
@@ -286,7 +485,11 @@
     }
 
     &__number {
-        @include text-style($font-main, 20px, $lh: 115%);
+        @include text-style($font-main, 1.25rem, $lh: 115%);
         color: $color-dark-1;
+
+        @include media-to('tablet') {
+            font-size: 0.938rem;
+        }
     }
 }

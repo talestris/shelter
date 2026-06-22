@@ -1,4 +1,6 @@
+@use 'sass:map';
 @use '../scss/variables' as *;
+@use '../scss/mixins' as *;
 
 @font-face {
     font-family: 'Georgia';
@@ -53,10 +55,20 @@ ul {
 }
 
 .section {
-    padding: 80px 40px;
+    padding: 5rem 2.5rem;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 80rem;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+
+    @media only screen and (min-width: #{map.get($breakpoints, 'laptop')}) {
+        padding: 0 fluid-clamp-rem(1.875rem, 2.5rem, map.get($breakpoints, 'laptop'), 80rem);
+    }
+}
+
+.section__title {
+    @include text-style($font-main, 2.188rem, $lh: 130%, $min-size: 1.563rem);
 }

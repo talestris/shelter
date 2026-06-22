@@ -5,23 +5,23 @@
 
 .pets-header {
     top: 0;
-    height: 120px;
+    height: 7.5rem;
     background-color: $color-white;
-    padding-top: 30px;
+    padding-top: 1.875rem;
 }
 
 .pets {
     background-color: $color-grey-1;
     position: relative;
-    padding-top: 150px;
-    padding-bottom: 110px;
+    padding-top: 9.375rem;
+    padding-bottom: 6.875rem;
 
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 50px;
-        padding-top: 50px;
+        gap: 3.125rem;
+        padding-top: 3.125rem;
     }
 
     &__logo-title {
@@ -33,7 +33,6 @@
     }
 
     &__title {
-        @include text-style($font-main, 35px, $lh: 130%);
         color: $color-dark-1;
         text-align: center;
     }
@@ -41,10 +40,10 @@
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        max-width: 1200px;
+        max-width: 75rem;
         width: 100%;
-        gap: 29px 40px;
-        padding-top: 10px;
+        gap: 1.813rem 2.5rem;
+        padding-top: 0.625rem;
     }
 
     &__link {
@@ -60,17 +59,17 @@
 
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 1.25rem;
     position: relative;
-    top: 10px;
+    top: 0.625rem;
 
     &__btn {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 52px;
-        height: 52px;
-        border: 2px solid $color-primary;
+        width: 3.25rem;
+        height: 3.25rem;
+        border: 0.125rem solid $color-primary;
         border-radius: 50%;
         background: transparent;
         cursor: pointer;
@@ -83,7 +82,7 @@
     }
 
     &__inactive {
-        border: 2px solid $color-grey;
+        border: 0.125rem solid $color-grey;
         cursor: default;
         pointer-events: none;
     }

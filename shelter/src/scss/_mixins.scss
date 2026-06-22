@@ -1,11 +1,41 @@
+@use 'sass:map';
+@use 'sass:math';
 @use '../scss/variables' as *;
 
+@function fluid-clamp-rem($min-rem, $max-rem, $viewport-min-rem, $viewport-max-rem) {
+    $min: math.div($min-rem, 1rem);
+    $max: math.div($max-rem, 1rem);
+    $v-min: math.div($viewport-min-rem, 1rem);
+    $v-max: math.div($viewport-max-rem, 1rem);
 
-@mixin text-style($font, $size, $weight: 400, $lh: 110%, $ls: 0.06em, $style: normal) {
+    @return clamp(#{$min-rem},
+        calc(#{$min-rem} + (#{$max} - #{$min}) * ((100vw - #{$viewport-min-rem}) / (#{$v-max} - #{$v-min}))),
+        #{$max-rem});
+}
+
+
+@mixin text-style($font, $size, $weight: 400, $lh: 110%, $ls: 0.06em, $style: normal, $min-size: null) {
     font-family: $font;
-    font-size: $size;
     font-weight: $weight;
     font-style: $style;
     line-height: $lh;
     letter-spacing: $ls;
+
+    @if $min-size {
+        font-size: fluid-clamp-rem($min-size, $size, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
+    }
+
+    @else {
+        font-size: $size;
+    }
+}
+
+@mixin media-to($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $value: map.get($breakpoints, $breakpoint);
+
+        @media only screen and (max-width: $value) {
+            @content;
+        }
+    }
 }
