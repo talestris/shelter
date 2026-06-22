@@ -70,5 +70,5 @@ ul {
 }
 
 .section__title {
-    @include text-style($font-main, 2.188rem, $lh: 130%);
+    @include text-style($font-main, 2.188rem, $lh: 130%, $min-size: 1.563rem);
 }

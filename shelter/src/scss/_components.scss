@@ -15,6 +15,10 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+
+        @include media-to('mobile') {
+            max-width: 18.75rem;
+        }
     }
 
     .burger {
@@ -24,6 +28,12 @@
         position: relative;
         cursor: pointer;
         transition: transform 0.3s ease;
+        background-color: transparent;
+        border: none;
+
+        @include media-to('tablet-max') {
+            display: flex;
+        }
 
         &__line,
         &::before,
@@ -70,6 +80,12 @@ h1 {
     @include text-style($font-main, 2rem);
     margin: 0;
     color: $color-primary;
+}
+
+.nav {
+    @include media-to('tablet-max') {
+        display: none;
+    }
 }
 
 .menu {
@@ -139,7 +155,13 @@ h1 {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
     &:nth-child(3) {
-        @include media-to('laptop') {
+        @include media-to('desktop-middle') {
+            display: none;
+        }
+    }
+
+    &:nth-child(2) {
+        @include media-to('tablet-max') {
             display: none;
         }
     }
@@ -178,7 +200,7 @@ h1 {
     padding: 2.5rem 0 0 0;
 
     @include media-to('laptop') {
-        padding-top: 0.9rem;
+        padding-top: 0.8rem;
         padding-left: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
         padding-right: fluid-clamp-rem(0.625rem, 1.875rem, map.get($breakpoints, 'mobile'), map.get($breakpoints, 'laptop'));
     }
@@ -191,13 +213,12 @@ h1 {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: fluid-clamp-rem(2rem, 4rem, map.get($breakpoints, 'laptop'), 80rem);
 
-        @include media-to('laptop') {
+        @include media-to('desktop-middle') {
             flex-wrap: wrap;
-            justify-content: space-around;
-            row-gap: 3.75rem;
-            column-gap: 3.75rem;
+            justify-content: center;
+            row-gap: 4.1rem;
+            column-gap: 4rem;
         }
     }
 
@@ -207,13 +228,18 @@ h1 {
         justify-content: flex-start;
         gap: 2rem;
         padding-top: 1.04em;
-        max-width: 20rem;
+        max-width: 18rem;
         width: 100%;
     }
 
+    &__contacts {
+        gap: 2.65rem;
+        max-width: 17.6rem;
+    }
+
     &__locations {
-        position: relative;
-        right: 0.3em;
+        gap: 2rem;
+        max-width: 18.875rem;
     }
 
     &__title {
