@@ -330,6 +330,18 @@
     }
 }
 
+.slider .card:nth-child(3) {
+    @include media-to('desktop-middle') {
+        display: none;
+    }
+}
+
+.slider .card:nth-child(2) {
+    @include media-to('tablet-max') {
+        display: none;
+    }
+}
+
 .help {
     padding: 0 0 1.15em 0;
 }

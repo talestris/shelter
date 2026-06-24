@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../../scss/global' as *;
 @use '../../scss/variables' as *;
 @use '../../scss/components' as *;
@@ -39,11 +40,34 @@
 
     &__cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 16.875rem);
+        justify-content: center;
         max-width: 75rem;
         width: 100%;
-        gap: 1.813rem 2.5rem;
+        row-gap: 1.813rem;
         padding-top: 0.625rem;
+        column-gap: clamp(0.5rem, -2.5rem + 6.25vw, 2.5rem);
+
+        @include media-to('desktop-l') {
+            grid-template-columns: repeat(3, 16.875rem);
+
+            .card:nth-child(n + 7) {
+                display: none;
+            }
+        }
+
+        @include media-to('desktop-middle') {
+            grid-template-columns: repeat(2, 16.875rem);
+        }
+
+        @include media-to('tablet-max') {
+            grid-template-columns: 16.875rem;
+            gap: 1.875rem 0;
+
+            .card:nth-child(n + 4) {
+                display: none;
+            }
+        }
     }
 
     &__link {
@@ -52,6 +76,15 @@
 
     &__link:hover {
         color: $color-black;
+    }
+}
+
+.pets-burger.burger {
+
+    &::before,
+    &::after,
+    .burger__line {
+        background-color: #000000;
     }
 }
 
