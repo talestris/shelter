@@ -328,17 +328,17 @@
     @include media-to('tablet-max') {
         gap: 3rem;
     }
-}
 
-.slider .card:nth-child(3) {
-    @include media-to('desktop-middle') {
-        display: none;
+    .card:nth-child(3) {
+        @include media-to('desktop-middle') {
+            display: none;
+        }
     }
-}
 
-.slider .card:nth-child(2) {
-    @include media-to('tablet-max') {
-        display: none;
+    .card:nth-child(2) {
+        @include media-to('tablet-max') {
+            display: none;
+        }
     }
 }
 

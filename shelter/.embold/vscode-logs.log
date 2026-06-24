@@ -3643,3 +3643,31 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.0.2+10-LTS-69, mixed mode, sharing)
 2026-06-22 03:18:49 info: Row(s) deleted
 2026-06-22 03:18:50 info: Row(s) deleted
 2026-06-22 03:18:54 info: Row(s) deleted
+2026-06-24 14:35:37 info: Congratulations, your extension "Embold" is now active!
+2026-06-24 14:35:37 info: ************* init ****************
+2026-06-24 14:35:37 info: tempDirectory : c:\Users\Acer\.vscode\extensions\embold-vscode.embold-0.3.8\temp
+2026-06-24 14:35:55 info: Extraction complete for source: c:\Users\Acer\.vscode\extensions\embold-vscode.embold-0.3.8\resources\embold-scanner-archive.zip, destination: c:\Users\Acer\.vscode\extensions\embold-vscode.embold-0.3.8\temp
+2026-06-24 14:35:55 info: Extension installed on machine OS : win32
+2026-06-24 14:35:55 info: Loading issues from local database on startup (checkbox unchecked)
+2026-06-24 14:35:55 info: Using emboldDBDir: d:\Documents\Lesya\Rolling Scopes\summer_bootcamp_2026\shelter\shelter\.embold
+2026-06-24 14:35:55 info: NO_PROXY set from VS Code http.noProxy: 
+2026-06-24 14:35:55 info: NODE_TLS_REJECT_UNAUTHORIZED not set (SSL verification enabled)
+2026-06-24 14:35:55 info: Using system certificates for SSL verification
+2026-06-24 14:35:55 info: [STARTUP] Processing 0 total issues from database
+2026-06-24 14:35:55 info: [STARTUP] Issues sorted by file path
+2026-06-24 14:35:55 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-06-24 14:35:55 info: Fetched the issues from DB
+2026-06-24 14:36:03 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-06-24 14:36:03 info: Current installed embold extension version : 0.3.8
+2026-06-24 14:36:03 info: Latest embold extension version on marketplace : 0.2.1
+2026-06-24 14:36:03 info: Current extension version: 0.3.8
+2026-06-24 14:36:03 info: Stored extension version: 0.3.8
+2026-06-24 14:36:03 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-06-24 14:36:04 info: Java version installed on machine : 
+java version "25.0.2" 2026-01-20 LTS
+Java(TM) SE Runtime Environment (build 25.0.2+10-LTS-69)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.2+10-LTS-69, mixed mode, sharing)
+
+2026-06-24 14:36:04 info: Java installed on machine.
+2026-06-24 21:26:51 info: Row(s) deleted
+2026-06-24 21:26:51 info: Row(s) deleted
