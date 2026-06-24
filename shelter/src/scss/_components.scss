@@ -154,18 +154,6 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-    &:nth-child(3) {
-        @include media-to('desktop-middle') {
-            display: none;
-        }
-    }
-
-    &:nth-child(2) {
-        @include media-to('tablet-max') {
-            display: none;
-        }
-    }
-
     &:hover {
         background-color: $color-white;
         box-shadow: 0 0.125rem 2.188rem 0.875rem rgba(13, 13, 13, 0.04);
