@@ -41,6 +41,10 @@ html {
 
 body {
     font-family: $font-main;
+
+    .noscroll {
+        overflow: hidden;
+    }
 }
 
 a {
