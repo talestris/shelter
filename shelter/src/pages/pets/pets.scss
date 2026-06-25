@@ -69,23 +69,6 @@
             }
         }
     }
-
-    &__link {
-        color: $color-dark-1;
-    }
-
-    &__link:hover {
-        color: $color-black;
-    }
-}
-
-.pets-burger.burger {
-
-    &::before,
-    &::after,
-    .burger__line {
-        background-color: #000000;
-    }
 }
 
 .pagination {

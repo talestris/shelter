@@ -28,3 +28,9 @@ menuLinks.forEach((link) => {
 });
 
 overlay.addEventListener("click", closeMenu);
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    closeMenu();
+  }
+});
