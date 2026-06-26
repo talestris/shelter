@@ -298,6 +298,7 @@
     max-width: 61.25rem;
     width: 100%;
     overflow: hidden;
+    position: relative;
 
     @include media-to('desktop-middle') {
         max-width: 36.25rem;
@@ -320,6 +321,8 @@
     display: flex;
     justify-content: space-around;
     gap: 5.438rem;
+    transition: transform 0.3s ease-in-out;
+    width: max-content;
 
     @media (max-width: 1200px) {
         gap: 0;
