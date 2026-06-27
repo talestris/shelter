@@ -8,7 +8,7 @@ const imagesContext = require.context(
   /\.(png|jpe?g|svg|webp)$/,
 );
 
-console.log(imagesContext.keys());
+/*console.log(imagesContext.keys());*/
 
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav");

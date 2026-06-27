@@ -47,13 +47,14 @@
         row-gap: 1.813rem;
         padding-top: 0.625rem;
         column-gap: clamp(0.5rem, -2.5rem + 6.25vw, 2.5rem);
+        transition: opacity 0.2s ease-in-out;
 
         @include media-to('desktop-l') {
             grid-template-columns: repeat(3, 16.875rem);
 
-            .card:nth-child(n + 7) {
+            /*.card:nth-child(n + 7) {
                 display: none;
-            }
+            }*/
         }
 
         @include media-to('desktop-middle') {
@@ -64,9 +65,9 @@
             grid-template-columns: 16.875rem;
             gap: 1.875rem 0;
 
-            .card:nth-child(n + 4) {
+            /*.card:nth-child(n + 4) {
                 display: none;
-            }
+            }*/
         }
     }
 }
@@ -75,7 +76,7 @@
 
     display: flex;
     justify-content: space-between;
-    gap: 1.25rem;
+    gap: fluid-clamp-rem(0.625rem, 1.25rem, map.get($breakpoints, "mobile"), map.get($breakpoints, "desktop-l"));
     position: relative;
     top: 0.625rem;
 
@@ -97,10 +98,15 @@
         border-color: $color-primary-light;
     }
 
-    &__inactive {
+    &__btn:disabled {
+        cursor: not-allowed;
         border: 0.125rem solid $color-grey;
-        cursor: default;
         pointer-events: none;
+    }
+
+    &__btn:disabled:hover {
+        background-color: transparent;
+        border-color: $color-grey;
     }
 
     &__active {
