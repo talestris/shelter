@@ -62,9 +62,9 @@ function shuffleCards(array) {
 
 function getCardsCount() {
   const width = window.innerWidth;
-  if (width >= 1280) return 3;
-  if (width >= 1024) return 2;
-  if (width >= 767) return 1;
+  if (width >= 1024) return 3;
+  if (width >= 768) return 2;
+  return 1;
 }
 
 function createCardHtml(pet) {
@@ -73,7 +73,8 @@ function createCardHtml(pet) {
   let imgSrc;
 
   try {
-    imgSrc = imagesContext(`./${imgName}`).default;
+    const contextResult = imagesContext(`./${imgName}`);
+    imgSrc = contextResult.default || contextResult;
   } catch (err) {
     console.error(`Failed to load image for ${pet.name}:`, err);
     imgSrc = "";

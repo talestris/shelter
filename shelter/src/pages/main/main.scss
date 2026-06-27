@@ -304,9 +304,13 @@
         max-width: 36.25rem;
     }
 
-    @include media-to('tablet-max') {
-        max-width: 25rem;
+    @include media-to('laptop') {
+        max-width: 16.875rem;
     }
+
+    /*@include media-to('tablet-max') {
+        max-width: 25rem;
+    }*/
 
     @include media-to('tablet') {
         order: 1;
@@ -319,20 +323,24 @@
 
 .slider__row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 5.438rem;
     transition: transform 0.3s ease-in-out;
     width: max-content;
 
-    @media (max-width: 1200px) {
+    @include media-to('desktop-middle') {
+        gap: 2.5rem;
+    }
+
+    /*@media (max-width: 1200px) {
+        gap: 2.5rem;
+    }*/
+
+    @include media-to('laptop') {
         gap: 0;
     }
 
-    @include media-to('tablet-max') {
-        gap: 3rem;
-    }
-
-    .card:nth-child(3) {
+    /*.card:nth-child(3) {
         @include media-to('desktop-middle') {
             display: none;
         }
@@ -342,7 +350,7 @@
         @include media-to('tablet-max') {
             display: none;
         }
-    }
+    }*/
 }
 
 .help {
