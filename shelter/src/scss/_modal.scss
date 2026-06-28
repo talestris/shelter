@@ -60,6 +60,7 @@
     .modal__img {
         width: 100%;
         height: auto;
+        border-bottom-left-radius: 0.563rem;
 
         @include media-to('desktop-middle') {
             flex: 0 0 21.875rem;
