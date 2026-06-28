@@ -94,7 +94,7 @@ function createCardHtml(pet) {
   }
 
   return `
-    <article class="card">
+    <article class="card" data-pet-name="${pet.name}>
       <img src="${imgSrc}" alt="${pet.name}" class="card__img">
       <h3 class="card__title">${pet.name}</h3>
       <button class="button button__second card__button" type="button" tabindex="1">Learn
