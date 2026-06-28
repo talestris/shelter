@@ -63,7 +63,7 @@ function shuffleCards(array) {
 function generate48Cards() {
   let masterArray = [];
   for (let i = 0; i < 6; i++) {
-    const shuffledGroup = shuffleCards(petsData);
+    let shuffledGroup = shuffleCards(petsData);
 
     if (masterArray.length > 0) {
       const lastSelectedPet = masterArray[masterArray.length - 1];
