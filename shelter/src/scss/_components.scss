@@ -21,6 +21,24 @@
         }
     }
 
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        opacity: 0;
+        background-color: $color-black;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+
+        &.open {
+            opacity: 0.6;
+            pointer-events: auto;
+        }
+    }
+
     .burger {
         display: none;
         width: 1.875rem;
@@ -30,6 +48,7 @@
         transition: transform 0.3s ease;
         background-color: transparent;
         border: none;
+        z-index: 4;
 
         @include media-to('tablet-max') {
             display: flex;
@@ -43,6 +62,7 @@
             width: 100%;
             height: 0.125rem;
             background-color: $color-primary;
+            transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
         }
 
         &::before {
@@ -58,6 +78,23 @@
         &::after {
             content: "";
             bottom: 0;
+        }
+
+        &.open {
+            transform: rotate(90deg);
+        }
+
+        .pets-page & {
+            @media (max-width: 47.938rem) {
+                &:not(.open) {
+
+                    &::before,
+                    &::after,
+                    .burger__line {
+                        background-color: #000000;
+                    }
+                }
+            }
         }
     }
 }
@@ -83,8 +120,22 @@ h1 {
 }
 
 .nav {
+    z-index: 3;
+
     @include media-to('tablet-max') {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 20rem;
+        height: 100vh;
+        background-color: $color-black;
+        padding-top: 15.5rem;
+        transform: translateX(100%);
+
+        &.open {
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
     }
 }
 
@@ -94,10 +145,23 @@ h1 {
     align-items: center;
     gap: 2rem;
 
+    @include media-to('tablet-max') {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
     &__link {
         @include text-style($font-second, 0.938rem, $lh: 152%, $ls: 0.001em);
         color: $color-grey;
         border-bottom: 0.188rem solid transparent;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+
+        @include media-to('tablet-max') {
+            font-size: 2rem;
+            line-height: 160%;
+            font-weight: 400;
+        }
     }
 
     &__link:hover {
@@ -107,6 +171,18 @@ h1 {
     &__link:active {
         border-bottom: 0.188rem solid $color-primary;
         transition: border-bottom 0.3s ease-in-out;
+    }
+
+    .pets-page & {
+        @media (min-width: 48rem) {
+            .menu__link {
+                color: $color-dark-1;
+
+                &:hover {
+                    color: $color-black;
+                }
+            }
+        }
     }
 }
 
