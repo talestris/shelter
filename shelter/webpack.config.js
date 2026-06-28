@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "js/[name].[contenthash:8].js",
-      publicPath: "/",
+      publicPath: isProduction ? "/shelter/" : "/",
       clean: true,
     },
 
