@@ -15,6 +15,7 @@ const nav = document.querySelector(".nav");
 const overlay = document.querySelector(".header__overlay");
 const body = document.body;
 const menuLinks = document.querySelectorAll(".menu__link");
+
 const btnLeft = document.querySelector(".arrow-left");
 const btnRight = document.querySelector(".arrow-right");
 const track = document.querySelector("#slider-track");
@@ -173,14 +174,16 @@ function fillModalData(petName) {
   modalContent.innerHTML = `
     <img src="${imgSrc}" alt="${pet.name}" class="modal__img">
     <div class="modal__info">
-      <h3 class="modal__title">${pet.name}</h3>
-      <h4 class="modal__subtitle">${pet.type} - ${pet.breed}</h4>
+      <div class="modal__header">
+        <h3 class="modal__title">${pet.name}</h3>
+        <h4 class="modal__subtitle">${pet.type} - ${pet.breed}</h4>
+      </div>
       <p class="modal__description">${pet.description}</p>
       <ul class="modal__list">
-        <li><strong>Age:</strong>${pet.age}</li>
-        <li><strong>Inoculations:</strong>${pet.inoculations.join(", ")}</li>
-        <li><strong>Diseases:</strong>${pet.diseases.join(", ")}</li>
-        <li><strong>Parasites:</strong>${pet.parasites.join(", ")}</li>
+        <li class="modal__list-item"><strong>Age:</strong> ${pet.age}</li>
+        <li class="modal__list-item"><strong>Inoculations:</strong> ${pet.inoculations.join(", ")}</li>
+        <li class="modal__list-item"><strong>Diseases:</strong> ${pet.diseases.join(", ")}</li>
+        <li class="modal__list-item"><strong>Parasites:</strong> ${pet.parasites.join(", ")}</li>
       </ul>
     </div>
   `;

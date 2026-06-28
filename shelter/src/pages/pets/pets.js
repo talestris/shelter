@@ -83,14 +83,13 @@ function getTotalPages() {
 function createCardHtml(pet) {
   const imgName = pet.img.split("/").pop();
 
-  let imgSrc;
+  let imgSrc = "";
 
   try {
     const contextResult = imagesContext(`./${imgName}`);
     imgSrc = contextResult.default || contextResult;
   } catch (err) {
     console.error(`Failed to load image for ${pet.name}:`, err);
-    imgSrc = "";
   }
 
   return `
@@ -188,4 +187,69 @@ jumpRight.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   allCards = generate48Cards();
   renderCurrentPage();
+});
+
+const modalOverlay = document.querySelector("#modal-overlay");
+const modalContent = document.querySelector("#modal-content");
+const modalCloseBtn = document.querySelector("#modal-close-btn");
+
+function fillModalData(petName) {
+  const pet = petsData.find((p) => p.name === petName);
+  if (!pet) return;
+
+  const imgName = pet.img.split("/").pop();
+  let imgSrc = "";
+  try {
+    const contextResult = imagesContext(`./${imgName}`);
+    imgSrc = contextResult.default || contextResult;
+  } catch (err) {
+    console.error(err);
+  }
+
+  modalContent.innerHTML = `
+    <img src="${imgSrc}" alt="${pet.name}" class="modal__img">
+    <div class="modal__info">
+      <div class="modal__header">
+        <h3 class="modal__title">${pet.name}</h3>
+        <h4 class="modal__subtitle">${pet.type} - ${pet.breed}</h4>
+      </div>
+      <p class="modal__description">${pet.description}</p>
+      <ul class="modal__list">
+        <li class="modal__list-item"><strong>Age:</strong> ${pet.age}</li>
+        <li class="modal__list-item"><strong>Inoculations:</strong> ${pet.inoculations.join(", ")}</li>
+        <li class="modal__list-item"><strong>Diseases:</strong> ${pet.diseases.join(", ")}</li>
+        <li class="modal__list-item"><strong>Parasites:</strong> ${pet.parasites.join(", ")}</li>
+      </ul>
+    </div>
+  `;
+}
+
+function openModal(petName) {
+  fillModalData(petName);
+  modalOverlay.classList.add("open");
+  body.classList.add("noscroll");
+}
+
+function closeModal() {
+  modalOverlay.classList.remove("open");
+  if (!nav.classList.contains("open")) {
+    body.classList.remove("noscroll");
+  }
+}
+
+cards.addEventListener("click", (event) => {
+  const cardElement = event.target.closest(".card");
+
+  if (cardElement) {
+    const petName = cardElement.getAttribute("data-pet-name");
+    openModal(petName);
+  }
+});
+
+modalCloseBtn.addEventListener("click", closeModal);
+
+modalOverlay.addEventListener("click", (event) => {
+  if (event.target === modalOverlay) {
+    closeModal();
+  }
 });
