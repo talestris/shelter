@@ -103,6 +103,10 @@
         cursor: not-allowed;
         border: 0.125rem solid $color-grey;
         pointer-events: none;
+
+        svg path {
+            fill: $color-grey;
+        }
     }
 
     &__btn:disabled:hover {

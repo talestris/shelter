@@ -64,6 +64,14 @@ function generate48Cards() {
   let masterArray = [];
   for (let i = 0; i < 6; i++) {
     const shuffledGroup = shuffleCards(petsData);
+
+    if (masterArray.length > 0) {
+      const lastSelectedPet = masterArray[masterArray.length - 1];
+
+      while (shuffledGroup[0].name === lastSelectedPet.name) {
+        shuffledGroup = shuffleCards(petsData);
+      }
+    }
     masterArray.push(...shuffledGroup);
   }
   return masterArray;
@@ -93,7 +101,7 @@ function createCardHtml(pet) {
   }
 
   return `
-    <article class="card" data-pet-name="${pet.name}>
+    <article class="card" data-pet-name="${pet.name}">
       <img src="${imgSrc}" alt="${pet.name}" class="card__img">
       <h3 class="card__title">${pet.name}</h3>
       <button class="button button__second card__button" type="button" tabindex="1">Learn
