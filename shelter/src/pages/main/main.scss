@@ -306,7 +306,7 @@
     }
 
     @include media-to('laptop') {
-        max-width: 16.875rem;
+        max-width: 33.75rem;
     }
 
     /*@include media-to('tablet-max') {
@@ -339,6 +339,7 @@
 
     @include media-to('laptop') {
         gap: 0;
+        justify-self: center;
     }
 
     /*.card:nth-child(3) {

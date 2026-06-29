@@ -43,9 +43,11 @@ menuLinks.forEach((link) => {
 overlay.addEventListener("click", closeMenu);
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 767) {
     closeMenu();
   }
+  track.innerHTML = "";
+  initSlider();
 });
 
 let currentCards = [];
@@ -64,7 +66,7 @@ function shuffleCards(array) {
 function getCardsCount() {
   const width = window.innerWidth;
   if (width >= 1024) return 3;
-  if (width >= 768) return 2;
+  if (width >= 767) return 2;
   return 1;
 }
 
