@@ -338,7 +338,7 @@
     }*/
 
     @include media-to('laptop') {
-        gap: 0;
+        gap: 1rem;
         justify-self: center;
     }
 
